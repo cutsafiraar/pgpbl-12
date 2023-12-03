@@ -67,16 +67,15 @@
 			var point = L.geoJson(null, {
 				onEachFeature: function (feature, layer) {
 					var popupContent = "<h4>" + feature.properties.nama + "</h4>" +
-						"<p>" + feature.properties.alamat + "</p>" +
-						"<p>" + feature.properties.jamoperasional + "</p>" +
+						"<p> Alamat Lengkap:" + feature.properties.alamat + "</p>" +
+						"<p> Jam Operasional:" + feature.properties.jamoperasional + "</p>";
 						
-					layer.bindPopup(popupContent);
-
-					layer.on('click', function (e) {
-						var destination = e.latlng;
-						control.spliceWaypoints(control.getWaypoints().length - 1, 1, destination);
+						layer.on({
+						click: function (e) {
+							point.bindPopup(popupContent);
+						},
 					});
-				},
+				}
 			});
 			$.getJSON("https://script.google.com/macros/s/AKfycbwgZKhdoLM0K0Xiu5tL438XWv1vWhMqQXNzMLklC4n38mBhx_28oBb4xxOX5wvqMPb_/exec", function (data) {
 				point.addData(data);
