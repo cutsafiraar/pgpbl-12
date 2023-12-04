@@ -76,8 +76,8 @@
 			var point = L.geoJson(null, {
 				onEachFeature: function (feature, layer) {
 					var popupContent = "<h4>" + feature.properties.nama + "</h4>" +
-						"<p> Alamat Lengkap:" + feature.properties.alamat + "</p>" +
-						"<p> Jam Operasional:" + feature.properties.jamoperasional + "</p>";
+						"<p> Alamat Lengkap: " + feature.properties.alamat + "</p>" +
+						"<p> Jam Operasional: " + feature.properties.jamoperasional + "</p>";
 						
 						layer.on({
 						click: function (e) {
@@ -93,10 +93,10 @@
 			});
 			//buat style area admin desa dan munculin desanya
 			var areaStyle = {
-				"color": "#DF826C",
+				"color": "#A7D397",
 				"weight": 2,
 				"fillOpacity": 0.7,
-				"opacity": 0.70
+				"opacity": 0.50
 			};
 
 
